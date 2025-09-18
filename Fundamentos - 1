@@ -1,0 +1,17 @@
+create database cadastro; /*criar banco de dados*/
+
+use cadastro; 
+/*Selecionar o banco*/
+
+create table pessoas(
+	nome varchar(30), 
+    idade tinyint(3),
+    sexo varchar(1),
+    peso float,
+    altura float,
+    nacionalidade varchar(20) 
+); 
+/*Criar a tabela e as entidades*/ 
+
+/*Estrutura da tabela*/
+describe pessoas;

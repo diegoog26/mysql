@@ -15,3 +15,42 @@ create table pessoas(
 
 /*Estrutura da tabela*/
 describe pessoas;
+
+/*Apagar TODO o banco de dados*/
+drop database cadastro;
+
+================================================================
+create database cadastro 
+default character set utf8 
+default collate utf8_general_ci;
+
+use cadastro;
+
+create table pessoas(
+id int not null auto_increment,
+nome varchar(30) not null,
+nascimento date,
+sexo enum('f', 'm'),
+peso decimal(5,2),
+altura decimal(3,2),
+nacionalidade varchar(20)default 'Brasil',
+primary key(id)
+)default charset = utf8;
+
+/*
+DDL - DEFINIÇÃO (Data Definition Language) 
+	create database
+    create table
+DML - MANIPULAÇÃO
+DQL- SOLICITAÇÕES
+*/ 
+
+/*Inserir registros na tabela*/
+insert into pessoas
+(id, nome, nascimento, sexo, peso, altura, nacionalidade)
+values
+('1', 'Diego Galdino', '2007-06-26', 'm', '58.00', '1.80', 'Brasil');
+
+/*Ver os registros da tabela*/
+select * from pessoas; 
+ 

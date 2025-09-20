@@ -41,6 +41,8 @@ primary key(id)
 DDL - DEFINIÇÃO (Data Definition Language) 
 	create database
     create table
+	alter table
+	drop table
 DML - MANIPULAÇÃO
 DQL- SOLICITAÇÕES
 */ 
@@ -53,4 +55,35 @@ values
 
 /*Ver os registros da tabela*/
 select * from pessoas; 
- 
+
+/*Alterar a tabela e adicionar coluna*/
+alter table pessoas
+add column profissao varchar(20);
+
+/*Alterar tabela e excluir coluna*/
+alter table pessoas
+drop column profissao;
+
+/*Adicionar coluna depois ou antes de outra coluna*/
+alter table pessoas
+add column profissao varchar(20) after nome;
+
+/*Adicionar a coluna e colocar em primeiro*/
+alter table pessoas
+add column codigo int first;
+
+/*Modifica a coluna*/
+alter table pessoas
+modify column profissao varchar(20) not null default '';
+
+/*Modifica o nome da coluna*/
+alter table pessoas 
+change column profissao prof varchar(20);
+
+/*Muda o nome da tabela*/
+alter table pessoas
+rename estudantes;
+
+/*Apaga a coluna*/
+alter table teste
+drop column telefone;

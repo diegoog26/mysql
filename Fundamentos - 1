@@ -93,7 +93,10 @@ update cursos
 set nome = 'Excel Essencial'
 where idcursos = 2;
 
-/*Deleta o registro
+/*Deleta o registro*/
 delete from cursos
 where idcursos = '28';
+
+/*Apaga os registros*/
+truncate table cursos;
 

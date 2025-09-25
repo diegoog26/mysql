@@ -88,7 +88,12 @@ rename estudantes;
 alter table teste
 drop column telefone;
 
-/*Alterar o campo*/
+/*Alterar o registro*/
 update cursos
 set nome = 'Excel Essencial'
 where idcursos = 2;
+
+/*Deleta o registro
+delete from cursos
+where idcursos = '28';
+

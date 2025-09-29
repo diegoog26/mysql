@@ -100,3 +100,6 @@ where idcursos = '28';
 /*Apaga os registros*/
 truncate table cursos;
 
+select nome, carga from cursos
+where ano <= '2025'
+order by nome;

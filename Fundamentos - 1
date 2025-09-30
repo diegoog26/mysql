@@ -103,3 +103,9 @@ truncate table cursos;
 select nome, carga from cursos
 where ano <= '2025'
 order by nome;
+
+select * from cursos
+where nome like 'd%';
+
+select * from cursos
+where nome = 'Excel';

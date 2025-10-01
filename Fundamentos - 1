@@ -112,3 +112,12 @@ where nome = 'Excel';
 
 select nome, nascimento from estudantes
 where nascimento between '2000-01-01' and '2013-12-31';
+
+select sum(carga) from cursos
+where ano = '2025';
+
+select max(carga) from cursos
+where ano = '2025';
+
+select avg(totalaulas) from cursos
+where ano = '2025';

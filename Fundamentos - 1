@@ -121,3 +121,6 @@ where ano = '2025';
 
 select avg(totalaulas) from cursos
 where ano = '2025';
+
+select count(nome) from estudantes
+where sexo = 'f' and altura > '1.60';

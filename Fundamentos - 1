@@ -124,3 +124,22 @@ where ano = '2025';
 
 select count(nome) from estudantes
 where sexo = 'f' and altura > '1.60';
+
+select carga, totalaulas from cursos
+where totalaulas
+group by carga;
+
+select ano, count(*) from cursos
+group by ano
+order by ano;
+
+select carga, count(*) from cursos
+group by ano
+having carga > 24;
+
+select avg(carga) from cursos;
+
+select carga, count(*)from cursos
+where ano >= '2025'
+group by carga
+having carga > (select avg(carga) from cursos);

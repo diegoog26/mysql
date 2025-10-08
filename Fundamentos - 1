@@ -171,3 +171,8 @@ select e.nome, c.nome
 from estudantes as e inner join cursos as c
 on c.idcursos = e.cursoprefere
 order by e.nome;
+
+select estudantes.nome, cursos.nome, estudantes.cursoprefere
+from estudantes RIGHT outer join cursos
+on idcursos = cursoprefere
+order by cursos.nome;

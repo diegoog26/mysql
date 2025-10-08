@@ -143,3 +143,31 @@ select carga, count(*)from cursos
 where ano >= '2025'
 group by carga
 having carga > (select avg(carga) from cursos);
+
+desc estudantes;
+desc cursos;
+
+/*Criar a chave estrangeira*/
+alter table estudantes
+add column cursoprefere int;
+
+/*Transformar em chave estrangeira*/ 
+alter table estudantes
+add foreign key (cursoprefere)
+references cursos(idcursos);
+
+update estudantes set cursoprefere = '2'
+where id = '1';
+
+select nome, cursoprefere from estudantes
+order by cursoprefere;
+
+select estudantes.nome, estudantes.cursoprefere, cursos.nome, cursos.ano
+from estudantes inner join cursos
+on idcursos = cursoprefere
+order by cursoprefere;
+
+select e.nome, c.nome
+from estudantes as e inner join cursos as c
+on c.idcursos = e.cursoprefere
+order by e.nome;

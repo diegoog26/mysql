@@ -176,3 +176,13 @@ select estudantes.nome, cursos.nome, estudantes.cursoprefere
 from estudantes RIGHT outer join cursos
 on idcursos = cursoprefere
 order by cursos.nome;
+
+create table prefere(
+	idpref int not null auto_increment,
+    data date, 
+    idest int,
+    idcursos int,
+    primary key(idpref),
+    foreign key(idest) references estudantes(id), 
+    foreign key(idcursos) references cursos(idcursos)
+)default charset = utf8;

@@ -186,3 +186,17 @@ create table prefere(
     foreign key(idest) references estudantes(id), 
     foreign key(idcursos) references cursos(idcursos)
 )default charset = utf8;
+
+select estudantes.id, estudantes.nome, prefere.idest from estudantes join prefere
+on estudantes.id = prefere.idest
+order by nome;
+
+select cursos.nome, cursos.idcursos, prefere.idcursos from cursos join prefere 
+on prefere.idcursos = cursos.idcursos;
+
+select estudantes.nome, cursos.nome from estudantes
+join prefere
+on prefere.idest = estudantes.id
+join cursos
+on cursos.idcursos = prefere.idcursos
+order by cursos.nome;
